@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login System</p>
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
 
                                     <form class="mx-1 mx-md-4" action="" method="post">
 
@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <input type="text" name="reg_no" id="form3Example3c" class="form-control" placeholder="Eg:12GES0000" />
-                                                <label class="form-label" for="form3Example3c">Registaion Number</label>
+                                                <label class="form-label" for="form3Example3c">Registaion Num</label>
                                             </div>
                                         </div>
 
