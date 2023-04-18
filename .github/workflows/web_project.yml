@@ -16,14 +16,11 @@ jobs:
         php-versions: ['7.4']
     name: PHP ${{ matrix.php-versions }}
     steps:
-    - name: Update server files
-            run: |
-              ssh http://react.avinthasandaruwan.me << EOF
-                cd /home/ubuntu/web_project/_work/web_project/web_project
-                git pull origin master
-                composer install
-                php artisan migrate
-                exit
-              EOF
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+      env:
+        runner: self-hosted
 
      
