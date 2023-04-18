@@ -30,4 +30,4 @@ jobs:
         composer install
         php artisan migrate
         exit
-    EOF
+        EOF
