@@ -22,7 +22,7 @@ jobs:
 
       - name: Update server files
         run: |
-          ssh AAAAB3NzaC1yc2EAAAADAQABAAABAQC4ipYJ8DBO9rQcAWOCtBzb6736PA83c+xniAnVlWj4rxemg52Cv7vh5XknKQIaC36FoAELNdds7+iRY/2CrrG0Fgfg0uVy1I/oMjT+OA/8jXvGp4fWQgI5gJDC/NvEGT8021Ko6ipnK7mfSfSJpEAZA+EHJOYu0/imhDP5nyVpaPZ8GKyX0Hf03iSgHM5f034CcJrZH9fI3Ro00UXKlEQ2OU7pXeZtbjOMyLuXIIcer0VxXHyk5wfD988Z2N7GRzgm41k1okDrFIc4HsGYcuG1N30TOHTfaYj6UTomp0keRJG7B0XmkNWtXfujGUR4ll/MaGQcsHr2WqYcw4NG80On  << EOF
+          ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4ipYJ8DBO9rQcAWOCtBzb6736PA83c+xniAnVlWj4rxemg52Cv7vh5XknKQIaC36FoAELNdds7+iRY/2CrrG0Fgfg0uVy1I/oMjT+OA/8jXvGp4fWQgI5gJDC/NvEGT8021Ko6ipnK7mfSfSJpEAZA+EHJOYu0/imhDP5nyVpaPZ8GKyX0Hf03iSgHM5f034CcJrZH9fI3Ro00UXKlEQ2OU7pXeZtbjOMyLuXIIcer0VxXHyk5wfD988Z2N7GRzgm41k1okDrFIc4HsGYcuG1N30TOHTfaYj6UTomp0keRJG7B0XmkNWtXfujGUR4ll/MaGQcsHr2WqYcw4NG80On ssh-key-2022-11-06  << EOF
             cd /home/ubuntu/web_project/_work/web_project/web_project
             git pull origin master
             composer install
