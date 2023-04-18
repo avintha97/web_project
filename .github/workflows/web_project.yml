@@ -4,8 +4,6 @@ on:
   push:
     branches: [ "master" ]
 
-permissions:
-  contents: read
 
 jobs:
   run:
@@ -15,14 +13,14 @@ jobs:
         php-versions: ['7.4']
     name: PHP ${{ matrix.php-versions }}
     steps:
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php-versions }}
-      env:
-        runner: self-hosted
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+        env:
+          runner: self-hosted
 
-    - name: Update server files
+      - name: Update server files
         run: |
           ssh -o "StrictHostKeyChecking no" ubuntu@react.avinthasandaruwan.me << EOF
             cd /home/ubuntu/web_project/_work/web_project/web_project
