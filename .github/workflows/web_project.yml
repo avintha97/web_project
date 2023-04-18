@@ -23,11 +23,11 @@ jobs:
         runner: self-hosted
 
     - name: Update server files
-      run: |
-        ssh ubuntu@react.avinthasandaruwan.me << EOF
-          cd /path/to/server/files
-          git pull origin master
-          composer install
-          php artisan migrate
-          exit
-        EOF
+        run: |
+          ssh -o "StrictHostKeyChecking no" ubuntu@react.avinthasandaruwan.me << EOF
+            cd /home/ubuntu/web_project/_work/web_project/web_project
+            git pull origin master
+            composer install
+            php artisan migrate
+            exit
+          EOF
