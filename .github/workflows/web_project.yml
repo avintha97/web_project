@@ -25,6 +25,8 @@ jobs:
     - name: Update server files
       run: |
         ssh-keygen -R react.avinthasandaruwan.me
+        ssh ubuntu@react.avinthasandaruwan.me mkdir -p ~/.ssh
+        ssh ubuntu@react.avinthasandaruwan.me touch ~/.ssh/known_hosts
         ssh ubuntu@react.avinthasandaruwan.me << EOF
           cd /home/ubuntu/web_project/_work/web_project/web_project
           git pull origin master
