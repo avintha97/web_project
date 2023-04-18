@@ -24,7 +24,7 @@ jobs:
 
     - name: Update server files
       run: |
-        ssh ubuntu@react.avinthasandaruwan.me << EOF
+        ssh 150.136.179.249 << EOF
           cd /home/ubuntu/web_project/_work/web_project/web_project
           git pull origin master
           composer install
