@@ -22,3 +22,13 @@ jobs:
         php-version: ${{ matrix.php-versions }}
       env:
         runner: self-hosted
+
+      - name: Update server files
+            run: |
+              ssh http://react.avinthasandaruwan.me << EOF
+                cd /home/ubuntu/web_project/_work/web_project/web_project
+                git pull origin master
+                composer install
+                php artisan migrate
+                exit
+              EOF
