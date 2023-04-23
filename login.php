@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <input type="text" name="reg_no" id="form3Example3c" class="form-control" placeholder="Eg:12GES0000" />
-                                                <label class="form-label" for="form3Example3c">Registaion Num</label>
+                                                <label class="form-label" for="form3Example3c">Registaion Number</label>
                                             </div>
                                         </div>
 
