@@ -15,6 +15,6 @@ jobs:
       with:
         source: .
         destination: /home/ubuntu/web_project/_work/web_project/web_project
-        
+        credentials: ${{ secrets.SSH_CREDENTIALS }}
     - name: Restart Nginx
       run: sudo service nginx restart
