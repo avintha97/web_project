@@ -1,33 +1,20 @@
-name: PHP Composer
+name: Deploy
 
 on:
   push:
     branches: [ "master" ]
 
-permissions:
-  contents: read
-
 jobs:
-  run:
+  deploy:
     runs-on: self-hosted
-    strategy:
-      matrix:
-        php-versions: ['7.4']
-    name: PHP ${{ matrix.php-versions }}
     steps:
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Rsync
+      uses: actions/rsync@v2
       with:
-        php-version: ${{ matrix.php-versions }}
-      env:
-        runner: self-hosted
-
-    - name: Update server files
-      run: |
-        ssh ubuntu@avinthasandaruwan.me << EOF
-        cd /home/ubuntu/web_project/_work/web_project/web_project
-        git pull origin master
-        composer install
-        php artisan migrate
-        exit
-        EOF
+        source: .
+        destination: /home/ubuntu/web_project/_work/web_project/web_project
+        
+    - name: Restart Nginx
+      run: sudo service nginx restart
