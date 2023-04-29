@@ -5,24 +5,24 @@
 
 if(isset($_POST['submit'])){
 
-    $name = pg_escape_string($conn,$_POST['name']);
-    $reg_no = pg_escape_string($conn,$_POST['reg_no']);
+    $name = mysqli_escape_string($conn,$_POST['name']);
+    $reg_no = mysqli_escape_string($conn,$_POST['reg_no']);
     $password = md5($_POST['password']);
     $rpassword = md5($_POST['rpassword']);
 
     $select = "SELECT * FROM user WHERE 'id' = '$reg_no' and 'password' = '$password'";
 
-    $result = pg_query($conn,$select);
+    $result = mysqli_query($conn,$select);
 
-    if (pg_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $error[] = 'User already exists in the database!';
     } else {
         if ($password != $rpassword) {
             $error[] = 'Passwords do not match!';
         } else {
-            $insert = "INSERT INTO \"user\" (id, name, password, regno) VALUES ('$reg_no', '$name', '$password', '$reg_no')";
+            $insert = "INSERT INTO user (id, name, password, regno) VALUES ('$reg_no', '$name', '$password', '$reg_no')";
             
-            pg_query($conn, $insert);
+            mysqli_query($conn, $insert);
             header('Location: login.php');
             exit();
         }

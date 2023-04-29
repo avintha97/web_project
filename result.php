@@ -64,22 +64,23 @@ session_start();
 
             <?php
             if (isset($_SESSION['regno'])) {
-                $regno = pg_escape_string($conn, $_SESSION['regno']);
-                $select = "SELECT * FROM public.\"18GES_SEM_1\" WHERE regno = $1";
-                $result = pg_query_params($conn, $select, array($regno));
+                $regno = mysqli_escape_string($conn, $_SESSION['regno']);
+                $select = "SELECT * FROM 18_GES_SEM_1 WHERE regno = '$regno'";
+                $result = mysqli_query($conn, $select);
+
                 $t_credit = 0;
                 $sem_gpa=0;
                 if ($result) {
                     $grades = array();
-                    while ($row = pg_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                         foreach ($row as $column => $data) {
                             
                             if (!isset($grades[$column])) {
                                 $grades[$column] = null;
                             }
-                            $select1 = "SELECT sub_name,total_credits FROM public.\"subjects\" WHERE sub_code = '$column'";
-                            $result1 = pg_query($conn, $select1);
-                            $row1 = pg_fetch_row($result1);
+                            $select1 = "SELECT sub_name,total_credits FROM subjects WHERE sub_code = '$column'";
+                            $result1 = mysqli_query($conn, $select1);
+                            $row1 = mysqli_fetch_row($result1);
                             if ($row1) {
                                 $credits = $row1[1] !== 'non-credited' ? (int)$row1[1] : 0;
                                 
@@ -100,7 +101,7 @@ session_start();
                     }
                     $gpa = calculateGPA($grades, $t_credit);
                 } else {
-                    echo "Error executing query: " . pg_last_error($conn);
+                    echo "Error executing query: " . mysqli_error($conn);
                 }
             }
             
