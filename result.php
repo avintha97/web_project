@@ -4,7 +4,10 @@
 
 session_start();
 
-
+if(!isset($_SESSION['regno'])) {
+    header('location:login.php');
+    exit();
+}
 
 
 
