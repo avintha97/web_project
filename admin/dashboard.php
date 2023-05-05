@@ -4,7 +4,10 @@
 
 session_start();
 
-
+if(!isset($_SESSION['name'])) {
+    header('location:../admin.php');
+    exit();
+}
 
 
 
@@ -40,9 +43,40 @@ session_start();
 
         </ul>
         <h3 style="color:aqua;"><?php echo $_SESSION['name']; ?></h3>
-        <a href="logout.php" class="btn btn-danger">log out</a>
+        <a href="../logout.php" class="btn btn-danger">log out</a>
     </div>
 </nav>
+
+<div class="container">
+     <br />
+     <br />
+      <h1>CSV Column Mapping in PHP</h1>
+      <br />
+        <div id="message"></div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Select CSV File</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row" id="upload_area">
+              <form method="post" id="upload_form" enctype="multipart/form-data">
+                <div class="col-md-6" >Select File</div>
+                <div class="col-md-6">
+                  <input type="file" name="file" id="csv_file" />
+                </div>
+                <br /><br /><br />
+                <div class="col-md-12" >
+                  <input type="submit" name="upload_file" id="upload_file" class="btn btn-primary" value="Upload" />
+                </div>
+              </form>
+              
+            </div>
+            <div class="table-responsive" id="process_area">
+
+            </div>
+          </div>
+        </div>
+     </div>
 </body>
 
 </html>
