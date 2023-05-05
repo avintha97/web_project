@@ -94,8 +94,10 @@ if (isset($_POST['submit'])) {
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <button type="submit" name="submit" class="btn btn-warning btn-lg">Login</button>
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <div class="d-flex  flex-column justify-content-center mx-4 mb-3 mb-lg-4">
                                             <p>Not sign up yet ? <a href="register.php">Register Now</a></p>
+                                           
+                                            <p>Are you Admin ? <a href="admin.php">Login now</a></p>
                                         </div>
 
                                     </form>

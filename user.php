@@ -24,27 +24,27 @@ session_start();
 
 <body>
 
-    <div class="container col-md-12">
+<div class="container col-md-12">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <img src="./static/images/uni_logo.jpg" alt="" style="max-width: 35px; max-height:35px;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="./static/images/uni_logo.jpg" alt="" style="max-width: 35px; max-height:35px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="user.php">Faculty of Geomatics <span class="sr-only">(current)</span></a>
-                    </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="user.php">Faculty of Geomatics <span class="sr-only">(current)</span></a>
+            </li>
 
-                </ul>
-                <h3 style="color:aqua;"><?php echo $_SESSION['name']; ?><h5 style="color:white;"><?php echo  $_SESSION['regno'];?></h5></h3>
-                <a href="logout.php" class="btn btn-danger">log out</a>
-            </div>
-        </nav>
-
+        </ul>
+        <h3 style="color:aqua;"><?php echo $_SESSION['name']; ?><h5 style="color:white;"><?php echo  $_SESSION['regno'];?></h5></h3>
+        <a href="logout.php" class="btn btn-danger">log out</a>
     </div>
+</nav>
+
+</div>
     <div class="contianer">
         <div class="row">
             <div class="row row-cols-3 g-3">
